@@ -11,15 +11,17 @@ const Results = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [pageMetrics, setPageMetrics] = useState([]);
   const siteUrl = atob(url);
-  const encodedAuth = btoa(
-    process.env.REACT_APP_DFS_API_LOGIN +
-      ":" +
-      process.env.REACT_APP_DFS_API_PASSWORD
-  );
+
+  // const encodedAuth = btoa(
+  //   process.env.REACT_APP_DFS_API_LOGIN +
+  //     ":" +
+  //     process.env.REACT_APP_DFS_API_PASSWORD
+  // );
+
+  const encodedAuth = btoa("1802.kushal@gmail.com:e96ee3d3d0cd3b9e");
+
   const authDetails = "Basic " + encodedAuth;
-  console.log(process.env.RAILWAY_GIT_REPO_OWNER, "env");
   useEffect(() => {
-    console.log(process.env.RAILWAY_GIT_REPO_OWNER);
     const fetchData = async () => {
       const data = await fetchSiteData(siteUrl, authDetails);
       id.current = data?.data?.tasks[0]?.id;
