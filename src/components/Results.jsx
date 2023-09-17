@@ -17,7 +17,7 @@ const Results = () => {
       process.env.REACT_APP_DFS_API_PASSWORD
   );
   const authDetails = "Basic " + encodedAuth;
-
+  console.log(process.env.RAILWAY_GIT_REPO_OWNER, "env");
   useEffect(() => {
     console.log(process.env.RAILWAY_GIT_REPO_OWNER);
     const fetchData = async () => {
